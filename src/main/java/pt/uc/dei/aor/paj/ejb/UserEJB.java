@@ -20,7 +20,7 @@ public class UserEJB implements UserEJBRemote{
     /**
      * Default constructor. 
      */
-	@PersistenceContext(name="Utilizadores")
+	@PersistenceContext(name="Utilizador")
 	EntityManager em;
 	
     public UserEJB() {
