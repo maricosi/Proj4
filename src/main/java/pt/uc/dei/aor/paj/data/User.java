@@ -4,6 +4,9 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Entity implementation class for Entity: Player
  *
@@ -19,6 +22,9 @@ public class User implements Serializable {
 	private String name;
 	private String password;
 	private String email;
+	private static final Logger logger = LoggerFactory.getLogger(User.class);
+	
+	//slf4j
 
 	public User() {
 		super();
@@ -30,6 +36,8 @@ public class User implements Serializable {
 		this.email = email;
 	}
 	public String getName() {
+		logger.info("Nome do Utilizador");
+		
 		return name;
 	}
 	public void setName(String name) {

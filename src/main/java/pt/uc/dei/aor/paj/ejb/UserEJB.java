@@ -1,13 +1,19 @@
 package pt.uc.dei.aor.paj.ejb;
 
 
-import java.util.LinkedList;
+
 import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+
+
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import pt.uc.dei.aor.paj.data.User;
 
@@ -23,11 +29,19 @@ public class UserEJB implements UserEJBRemote{
 	@PersistenceContext(name="Utilizador")
 	EntityManager em;
 	
+	private static final Logger logger = LoggerFactory.getLogger(UserEJB.class);
+	
     public UserEJB() {
         // TODO Auto-generated constructor stub
     }
     
     public void populate(){
+    	System.out.println("OLA");
+    	logger.trace("dsnklan");
+    	logger.debug("Sample debug message");
+		logger.info("Sample info message");
+		logger.warn("Sample warn message");
+		logger.error("Sample error message");
     	em.persist(new User("Filipa","123","filipapedrosa@gmail.com"));
     	em.persist(new User("Marisa","456","marisaisimoes@gmail.com"));
     }
